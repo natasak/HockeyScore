@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreTeamA);
     }
 
-
     /**
      * Increase the given score for 1 point for Team B.
      */
@@ -50,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = scoreTeamB + 1;
         displayForTeamB(scoreTeamB);
     }
-
 
     /**
      * Displays the given penalties for Team A.
@@ -67,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         TextView scoreView = (TextView) findViewById(R.id.team_b_penalty);
         scoreView.setText(String.valueOf(score));
     }
-
 
     /**
      * Increase the given penalties for +2 minutes for Team A.
@@ -116,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
         penaltyTeamB = penaltyTeamB + 10;
         displayPenaltiesForTeamB(penaltyTeamB);
     }
-
 
     /**
      * reset scores and penalties for Team A and B.
