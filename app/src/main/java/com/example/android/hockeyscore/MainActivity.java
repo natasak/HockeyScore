@@ -12,10 +12,51 @@ public class MainActivity extends AppCompatActivity {
     int penaltyTeamA = 0;
     int penaltyTeamB = 0;
 
+    //keys for saved states
+    public static final String keyScoreTeamA = "keyScoreTeamA";
+    public static final String keyScoreTeamB = "keyScoreTeamB";
+    public static final String keyPenaltyTeamA = "keyPenaltyTeamA";
+    public static final String keyPenaltyTeamB = "keyPenaltyTeamB";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    /**
+     * Save states of variables, just before the screen is rotated.
+     * @param outState saves the state of variables
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("keyScoreTeamA", scoreTeamA);
+        outState.putInt("keyScoreTeamB", scoreTeamB);
+        outState.putInt("keyPenaltyTeamA", penaltyTeamA);
+        outState.putInt("keyPenaltyTeamB", penaltyTeamB);
+
+        super.onSaveInstanceState(outState);
+    }
+
+    /**
+     * When screen is rotated restore the variables from onSaveInstanceState.
+     * @param savedInstanceState restores the previous state
+     */
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        int scoreTeamA = savedInstanceState.getInt("keyScoreTeamA");
+        int scoreTeamB = savedInstanceState.getInt("keyScoreTeamB");
+        int penaltyTeamA = savedInstanceState.getInt("keyPenaltyTeamA");
+        int penaltyTeamB = savedInstanceState.getInt("keyPenaltyTeamB");
+
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        displayPenaltiesForTeamA(penaltyTeamA);
+        displayPenaltiesForTeamB(penaltyTeamB);
+
+
+        super.onRestoreInstanceState(savedInstanceState);
     }
 
     /**
