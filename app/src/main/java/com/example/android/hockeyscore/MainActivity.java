@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        int scoreTeamA = savedInstanceState.getInt("keyScoreTeamA");
-        int scoreTeamB = savedInstanceState.getInt("keyScoreTeamB");
-        int penaltyTeamA = savedInstanceState.getInt("keyPenaltyTeamA");
-        int penaltyTeamB = savedInstanceState.getInt("keyPenaltyTeamB");
+        int scoreTeamA = savedInstanceState.getInt(keyScoreTeamA);
+        int scoreTeamB = savedInstanceState.getInt(keyScoreTeamB);
+        int penaltyTeamA = savedInstanceState.getInt(keyPenaltyTeamA);
+        int penaltyTeamB = savedInstanceState.getInt(keyPenaltyTeamB);
 
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);

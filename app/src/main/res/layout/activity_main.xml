@@ -5,15 +5,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context="com.example.android.hockeyscore.MainActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:text="Team A"
+                android:textColor="#cca300"
+                android:textSize="24sp"
+                />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icehockey" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:text="Team B"
+                android:textColor="#cca300"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="#cca300" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -21,15 +67,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:padding="16dp"
-                    android:text="Team A"
-                    android:textColor="#616161"
-                    android:textSize="14sp" />
+
 
                 <TextView
                     android:id="@+id/team_a_score"
@@ -51,25 +89,34 @@
                     android:onClick="goalA"
                     android:text="goal" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-medium"
-                    android:padding="16dp"
-                    android:text="PENALTIES:"
-                    android:gravity="center_horizontal"
-                    android:textColor="#616161"
-                    android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/team_a_penalty"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:fontFamily="sans-serif-light"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="42sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"   >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="16dp"
+                        android:layout_marginLeft="30dp"
+                        android:text="PENALTIES:"
+                        android:textColor="#cca300"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/team_a_penalty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:fontFamily="sans-serif-light"
+                        android:text="0"
+                        android:textColor="#cca300"
+                        android:textSize="32sp" />
+
+                </LinearLayout>
+
 
                 <Button
                     android:layout_width="match_parent"
@@ -103,8 +150,7 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray" />
+                android:background="#cca300" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -112,15 +158,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal"
-                    android:padding="16dp"
-                    android:text="Team B"
-                    android:textColor="#616161"
-                    android:textSize="14sp" />
+
 
                 <TextView
                     android:id="@+id/team_b_score"
@@ -142,25 +180,34 @@
                     android:onClick="goalB"
                     android:text="goal" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="sans-serif-medium"
-                    android:padding="16dp"
-                    android:text="PENALTIES:"
-                    android:gravity="center_horizontal"
-                    android:textColor="#616161"
-                    android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/team_b_penalty"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:fontFamily="sans-serif-light"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="42sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"   >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="16dp"
+                        android:text="PENALTIES:"
+                        android:textColor="#cca300"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/team_b_penalty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textColor="#cca300"
+                        android:textSize="32sp" />
+
+                </LinearLayout>
+
 
                 <Button
                     android:layout_width="match_parent"
@@ -194,15 +241,13 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="8dp"
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
+            android:layout_marginTop="20dp"
             android:onClick="reset"
             android:text="Reset" />
 
-    </RelativeLayout>
+    </LinearLayout>
 </ScrollView>
