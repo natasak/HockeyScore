@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">HockeyScore</string>
+
+
+    <!-- from XML file -->
+    <string name="teamA">Team A</string>
+    <string name="teamB">Team B</string>
+    <string name="zero">0</string>
+    <string name="penalties">PENALTIES:</string>
+
+    <!-- from XML file- buttons -->
+    <string name="goal">goal</string>
+    <string name="min2">+2 min</string>
+    <string name="min5">+5 minn</string>
+    <string name="min10">+10 min</string>
+    <string name="reset">reset</string>
+
 </resources>
