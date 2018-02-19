@@ -18,11 +18,22 @@ public class MainActivity extends AppCompatActivity {
     public static final String keyPenaltyTeamA = "keyPenaltyTeamA";
     public static final String keyPenaltyTeamB = "keyPenaltyTeamB";
 
+    //view variables
+    private TextView scoreViewA, scoreViewB, penaltyViewA, penaltyViewB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /**
+         * Initialize all view variables
+         */
+        scoreViewA = (TextView) findViewById(R.id.team_a_score);
+        scoreViewB = (TextView) findViewById(R.id.team_b_score);
+        penaltyViewA = (TextView) findViewById(R.id.team_a_penalty);
+        penaltyViewB = (TextView) findViewById(R.id.team_b_penalty);
     }
 
     /**
@@ -55,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         displayPenaltiesForTeamA(penaltyTeamA);
         displayPenaltiesForTeamB(penaltyTeamB);
 
-
         super.onRestoreInstanceState(savedInstanceState);
     }
 
@@ -63,16 +73,14 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team A.
      */
     public void displayForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewA.setText(String.valueOf(score));
     }
 
     /**
      * Displays the given score for Team B.
      */
     public void displayForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewB.setText(String.valueOf(score));
     }
 
     /**
@@ -95,16 +103,14 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given penalties for Team A.
      */
     public void displayPenaltiesForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_penalty);
-        scoreView.setText(String.valueOf(score));
+        penaltyViewA.setText(String.valueOf(score));
     }
 
     /**
      * Displays the given penalties for Team B.
      */
     public void displayPenaltiesForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_penalty);
-        scoreView.setText(String.valueOf(score));
+        penaltyViewB.setText(String.valueOf(score));
     }
 
     /**
